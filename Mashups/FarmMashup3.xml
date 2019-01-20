@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b535"
+ majorVersion="8"
+ minorVersion="3"
+ modelPersistenceProviderPackage="H2PersistenceProviderPackage"
+ revision="2"
+ schemaVersion="1030"
+ universal="">
+    <Mashups>
+        <Mashup
+         aspect.isResponsive="false"
+         aspect.mashupType="mashup"
+         columns="0.0"
+         description=""
+         documentationContent=""
+         homeMashup=""
+         lastModifiedDate="2019-01-20T01:32:38.057+01:00"
+         name="FarmMashup3"
+         projectName="FarmProject"
+         rows="0.0"
+         tags="FarmTag:Farm Application">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ParameterDefinitions></ParameterDefinitions>
+            <Things>
+                <Thing>Barn</Thing>
+                <Thing>Barn2</Thing>
+            </Things>
+            <ThingShapes></ThingShapes>
+            <ThingTemplates></ThingTemplates>
+            <mashupContent>
+            <![CDATA[
+            {
+              "CustomMashupCss" : "",
+              "Data" : {
+                "Session" : {
+                  "DataName" : "Session",
+                  "EntityName" : "",
+                  "EntityType" : "Session",
+                  "Id" : "session",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "SessionInterface",
+                    "Name" : "GetGlobalSessionValues",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetGlobalSessionValues"
+                  } ]
+                },
+                "Things_Barn" : {
+                  "DataName" : "Things_Barn",
+                  "EntityName" : "Barn",
+                  "EntityType" : "Things",
+                  "Id" : "b847d945-0e11-4de3-a4bc-6def993c4842",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "97b56944-ff61-4f4e-b8af-bff612f858ea",
+                    "Name" : "QueryPropertyHistory",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "QueryPropertyHistory"
+                  }, {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "b0b6b503-c260-402f-b9a7-6d9e82b06338",
+                    "Name" : "GetPropertyValues",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetPropertyValues"
+                  } ]
+                },
+                "Things_Barn2" : {
+                  "DataName" : "Things_Barn2",
+                  "EntityName" : "Barn2",
+                  "EntityType" : "Things",
+                  "Id" : "4217d044-fb4d-4eec-9a00-6803c10902a6",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "db8f52d4-a5b2-4c44-ba26-11233c359344",
+                    "Name" : "GetPropertyValues",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetPropertyValues"
+                  }, {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "407a4635-59bd-4152-8481-8f70eacf9790",
+                    "Name" : "QueryPropertyHistory",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "QueryPropertyHistory"
+                  } ]
+                },
+                "UserExtensions" : {
+                  "DataName" : "UserExtensions",
+                  "EntityName" : "",
+                  "EntityType" : "UserExtensions",
+                  "Id" : "UserExtensions",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "UserExtensionInterface",
+                    "Name" : "GetCurrentUserExtensionProperties",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetCurrentUserExtensionProperties"
+                  } ]
+                }
+              },
+              "DataBindings" : [ {
+                "Id" : "7b747eb3-0248-45d5-9441-77546b7ce2bc",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "temperature",
+                  "SourcePropertyBaseType" : "NUMBER",
+                  "SourcePropertyType" : "Field",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "NUMBER",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "QueryPropertyHistory",
+                "SourceSection" : "Things_Barn",
+                "TargetArea" : "UI",
+                "TargetId" : "gauge-4",
+                "TargetSection" : ""
+              }, {
+                "Id" : "762c4919-2077-47c6-9764-91ac93275a54",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "temperature",
+                  "SourcePropertyBaseType" : "NUMBER",
+                  "SourcePropertyType" : "Field",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "NUMBER",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "GetPropertyValues",
+                "SourceSection" : "Things_Barn2",
+                "TargetArea" : "UI",
+                "TargetId" : "gauge-2",
+                "TargetSection" : ""
+              } ],
+              "DesignTimePermissions" : {
+                "Create" : [ ],
+                "Delete" : [ ],
+                "Metadata" : [ ],
+                "Read" : [ ],
+                "Update" : [ ]
+              },
+              "Events" : [ {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_Barn",
+                "EventHandlerService" : "QueryPropertyHistory",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "3eb399ec-6ddb-41fd-a629-be217ca49127"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_Barn",
+                "EventHandlerService" : "GetPropertyValues",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "0796b39a-3f76-4592-9b3d-a9dd3b419508"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_Barn2",
+                "EventHandlerService" : "GetPropertyValues",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "06641198-54b1-4772-bc84-133ab0ed4efc"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_Barn2",
+                "EventHandlerService" : "QueryPropertyHistory",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "a2b0057d-1082-486a-8c57-fa49812cb1ec"
+              } ],
+              "RunTimePermissions" : {
+                "permissions" : [ ]
+              },
+              "UI" : {
+                "Properties" : {
+                  "AddToDashboardButtonStyle" : "DefaultAddToDashboardButtonStyle",
+                  "Area" : "Mashup",
+                  "BGImageRepeat" : "no-repeat",
+                  "BGImageSize" : "auto",
+                  "Columns" : 0,
+                  "ConfigureGadgetButtonStyle" : "DefaultConfigureGadgetButtonStyle",
+                  "DisplayName" : "Mashup",
+                  "EnableParameterEditing" : false,
+                  "Height" : 618,
+                  "Id" : "mashup-root",
+                  "IgnoreWarningsInViewMashup" : false,
+                  "IsPrintLayout" : false,
+                  "Left" : 0,
+                  "MashupToEditGadget" : "DefaultMashupToEditGadget",
+                  "MinHeight" : 0,
+                  "MinWidth" : 0,
+                  "ResponsiveLayout" : false,
+                  "Rows" : 0,
+                  "ShowDataLoading" : true,
+                  "Style" : "DefaultMashupStyle",
+                  "Title" : "",
+                  "TitleBar" : false,
+                  "TitleBarStyle" : "DefaultTitleBarStyle",
+                  "TitleBarText" : "Gadget Title Here",
+                  "Top" : 0,
+                  "Type" : "mashup",
+                  "Visible" : true,
+                  "Width" : 1024,
+                  "Z-index" : 10,
+                  "__TypeDisplayName" : "Mashup",
+                  "id_index" : 5,
+                  "supportsAutoResize" : true
+                },
+                "Widgets" : [ {
+                  "Properties" : {
+                    "Aperture" : 270,
+                    "Area" : "UI",
+                    "CenterDiameter" : 20,
+                    "CenterStyle" : "DefaultGaugeCenterStyle",
+                    "DisplayName" : "Temp. Barn 2",
+                    "FormatNeedle" : true,
+                    "GaugeBorder" : 20,
+                    "GaugeBorderStyle" : "DefaultGaugeBorderStyle",
+                    "GaugeFaceStyle" : "DefaultGaugeFaceStyle",
+                    "GaugeStyle" : "DefaultGaugeStyle",
+                    "Height" : 200,
+                    "Id" : "gauge-2",
+                    "Intervals" : 10,
+                    "IntervalsPerLabel" : 2,
+                    "LabelDecimals" : 0,
+                    "LabelDigits" : 3,
+                    "LabelDisplayMode" : "inside",
+                    "LabelStyle" : "DefaultGaugeLabelStyle",
+                    "Left" : 25,
+                    "Legend" : "Temp. Barn 2",
+                    "LegendDisplayMode" : "bottom",
+                    "LegendStyle" : "DefaultGaugeLegendStyle",
+                    "MaxValue" : 100,
+                    "MinValue" : 0,
+                    "MinorTickLength" : 4,
+                    "MinorTicks" : 4,
+                    "NeedleDiameter" : 10,
+                    "NeedleStyle" : "DefaultGaugeNeedleStyle",
+                    "ReferenceAngle" : 225,
+                    "ResponsiveLayout" : false,
+                    "RingWidth" : 10,
+                    "ShowDataLoading" : true,
+                    "TickLength" : 8,
+                    "TickStyle" : "DefaultGaugeTickStyle",
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 10,
+                    "Type" : "gauge",
+                    "ValueDecimals" : 0,
+                    "ValueDigits" : 3,
+                    "ValueDisplayMode" : "none",
+                    "ValueStyle" : "DefaultGaugeValueStyle",
+                    "Visible" : true,
+                    "Width" : 200,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Gauge",
+                    "__supportsTooltip" : true
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "Aperture" : 270,
+                    "Area" : "UI",
+                    "CenterDiameter" : 20,
+                    "CenterStyle" : "DefaultGaugeCenterStyle",
+                    "DisplayName" : "Temp. Barn 1",
+                    "FormatNeedle" : true,
+                    "GaugeBorder" : 20,
+                    "GaugeBorderStyle" : "DefaultGaugeBorderStyle",
+                    "GaugeFaceStyle" : "DefaultGaugeFaceStyle",
+                    "GaugeStyle" : "DefaultGaugeStyle",
+                    "Height" : 200,
+                    "Id" : "gauge-4",
+                    "Intervals" : 10,
+                    "IntervalsPerLabel" : 2,
+                    "LabelDecimals" : 0,
+                    "LabelDigits" : 3,
+                    "LabelDisplayMode" : "inside",
+                    "LabelStyle" : "DefaultGaugeLabelStyle",
+                    "Left" : 245,
+                    "Legend" : "Temp. Barn 1",
+                    "LegendDisplayMode" : "bottom",
+                    "LegendStyle" : "DefaultGaugeLegendStyle",
+                    "MaxValue" : 100,
+                    "MinValue" : 0,
+                    "MinorTickLength" : 4,
+                    "MinorTicks" : 4,
+                    "NeedleDiameter" : 10,
+                    "NeedleStyle" : "DefaultGaugeNeedleStyle",
+                    "ReferenceAngle" : 225,
+                    "ResponsiveLayout" : false,
+                    "RingWidth" : 10,
+                    "ShowDataLoading" : true,
+                    "TickLength" : 8,
+                    "TickStyle" : "DefaultGaugeTickStyle",
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 10,
+                    "Type" : "gauge",
+                    "ValueDecimals" : 0,
+                    "ValueDigits" : 3,
+                    "ValueDisplayMode" : "none",
+                    "ValueStyle" : "DefaultGaugeValueStyle",
+                    "Visible" : true,
+                    "Width" : 200,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Gauge",
+                    "__supportsTooltip" : true
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "ActiveStyle" : "DefaultButtonActiveStyle",
+                    "Area" : "UI",
+                    "AutoRefresh" : true,
+                    "AutoRefreshTabSequence" : 0,
+                    "DisplayName" : "autorefresh-5",
+                    "FocusStyle" : "DefaultButtonFocusStyle",
+                    "Height" : 28,
+                    "HoverStyle" : "DefaultButtonHoverStyle",
+                    "IconAlignment" : "left",
+                    "Id" : "autorefresh-5",
+                    "Label" : "Refresh Now",
+                    "Left" : 510,
+                    "RefreshInterval" : 30,
+                    "RefreshNowTabSequence" : 0,
+                    "RefreshToggleLabel" : "On",
+                    "RefreshToggleLabelOff" : "Off",
+                    "RefreshToggleSliderStyle" : "DefaultAutoRefreshToggleSliderStyle",
+                    "RefreshToggleStyle" : "DefaultAutoRefreshToggleStyle",
+                    "RefreshToggleStyleOff" : "DefaultAutoRefreshToggleOffStyle",
+                    "ResponsiveLayout" : false,
+                    "ShowControls" : true,
+                    "ShowDataLoading" : true,
+                    "Style" : "DefaultButtonStyle",
+                    "Top" : 10,
+                    "Type" : "autorefresh",
+                    "Visible" : true,
+                    "Width" : 180,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Auto Refresh"
+                  },
+                  "Widgets" : [ ]
+                } ]
+              },
+              "mashupType" : "mashup"
+            }
+            ]]>
+            </mashupContent>
+        </Mashup>
+    </Mashups>
+</Entities>
