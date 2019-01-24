@@ -11,16 +11,16 @@
         <Thing
          description=""
          documentationContent=""
-         effectiveThingPackage="ConfiguredThing"
+         effectiveThingPackage="RemoteThing"
          enabled="true"
          homeMashup=""
          identifier=""
-         lastModifiedDate="2018-12-28T16:49:48.572+01:00"
-         name="Barn"
+         lastModifiedDate="2019-01-24T15:11:58.684+01:00"
+         name="Barn3"
          projectName="FarmProject"
          published="false"
          tags="FarmTag:Farm Application"
-         thingTemplate="BuildingTemplate"
+         thingTemplate="BarnTemplate"
          valueStream="">
             <avatar></avatar>
             <DesignTimePermissions>
@@ -45,36 +45,48 @@
                 <Subscriptions></Subscriptions>
             </ThingShape>
             <PropertyBindings></PropertyBindings>
-            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemotePropertyBindings>
+                <RemotePropertyBinding
+                 aspect.source=""
+                 aspect.startType="useDefaultValue"
+                 aspect.tagAddress=""
+                 foldType="NONE"
+                 name="buildingID"
+                 pushThreshold="0.0"
+                 pushType="ALWAYS"
+                 sourceName="BuildingID"
+                 timeout="0"></RemotePropertyBinding>
+                <RemotePropertyBinding
+                 aspect.source=""
+                 aspect.startType="useDefaultValue"
+                 aspect.tagAddress=""
+                 foldType="NONE"
+                 name="temperature"
+                 pushThreshold="0.0"
+                 pushType="ALWAYS"
+                 sourceName="Temperature"
+                 timeout="0"></RemotePropertyBinding>
+                <RemotePropertyBinding
+                 aspect.source=""
+                 aspect.startType="useDefaultValue"
+                 aspect.tagAddress=""
+                 foldType="NONE"
+                 name="watts"
+                 pushThreshold="0.0"
+                 pushType="ALWAYS"
+                 sourceName="Watts"
+                 timeout="0"></RemotePropertyBinding>
+            </RemotePropertyBindings>
             <RemoteServiceBindings></RemoteServiceBindings>
             <RemoteEventBindings></RemoteEventBindings>
             <AlertConfigurations></AlertConfigurations>
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
-                <watts>
-                    <Value>0.0</Value>
-                    <Timestamp>2019-01-20T20:42:45.584+01:00</Timestamp>
+                <lastConnection>
+                    <Value>2019-01-24T15:11:58.702+01:00</Value>
+                    <Timestamp>2019-01-24T15:11:58.702+01:00</Timestamp>
                     <Quality>GOOD</Quality>
-                </watts>
-                <temperature>
-                    <Value>72.0000000001594</Value>
-                    <Timestamp>2019-01-20T21:02:29.529+01:00</Timestamp>
-                    <Quality>GOOD</Quality>
-                </temperature>
-                <building_lat_long>
-                    <Value>42.296375,-71.214556,0.0</Value>
-                    <Timestamp>2018-12-28T16:49:29.887+01:00</Timestamp>
-                    <Quality>GOOD</Quality>
-                </building_lat_long>
-                <buildingID>
-                    <Value>
-                    <![CDATA[
-                    12345
-                    ]]>
-                    </Value>
-                    <Timestamp>2018-12-28T16:49:29.886+01:00</Timestamp>
-                    <Quality>GOOD</Quality>
-                </buildingID>
+                </lastConnection>
             </ThingProperties>
         </Thing>
     </Things>

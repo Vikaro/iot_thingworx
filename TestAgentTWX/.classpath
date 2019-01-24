@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-dataformat-smile-2.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/jaxen-1.1.6.jar"/>
+	<classpathentry kind="lib" path="lib/jdom2-2.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/joda-time-2.9.jar"/>
+	<classpathentry kind="lib" path="lib/logback-classic-1.0.13.jar"/>
+	<classpathentry kind="lib" path="lib/logback-core-1.0.13.jar"/>
+	<classpathentry kind="lib" path="lib/netty-all-4.0.47.Final.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="lib" path="lib/thingworx-common-development.server.build-b595.jar"/>
+	<classpathentry kind="lib" path="lib/thingworx-communications-client-development.server.build-b595.jar"/>
+	<classpathentry kind="lib" path="lib/thingworx-java-sdk-development.server.build-b595-javadoc.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

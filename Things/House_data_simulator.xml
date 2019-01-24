@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b535"
+ majorVersion="8"
+ minorVersion="3"
+ modelPersistenceProviderPackage="H2PersistenceProviderPackage"
+ revision="2"
+ schemaVersion="1030"
+ universal="">
+    <Things>
+        <Thing
+         description=""
+         documentationContent=""
+         effectiveThingPackage="TimerThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         lastModifiedDate="2019-01-20T21:02:40.932+01:00"
+         name="House_data_simulator"
+         projectName="FarmProject"
+         published="false"
+         tags="FarmTag:Farm Application"
+         thingTemplate="Timer"
+         valueStream="Storage_ValueStream">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables>
+                <ConfigurationTable
+                 description="General Settings"
+                 isMultiRow="false"
+                 name="Settings"
+                 ordinal="0">
+                    <DataShape>
+                        <FieldDefinitions>
+                            <FieldDefinition
+                             aspect.defaultValue="true"
+                             baseType="BOOLEAN"
+                             description="Automatically enable timer on startup"
+                             name="enabled"
+                             ordinal="0"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="USERNAME"
+                             description="User context in which to run event handlers"
+                             name="runAsUser"
+                             ordinal="0"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="60000.0"
+                             baseType="NUMBER"
+                             description="Update rate"
+                             name="updateRate"
+                             ordinal="0"></FieldDefinition>
+                        </FieldDefinitions>
+                    </DataShape>
+                    <Rows>
+                        <Row>
+                            <enabled>true</enabled>
+                            <runAsUser>
+                            <![CDATA[
+                            Administrator
+                            ]]>
+                            </runAsUser>
+                            <updateRate>3000.0</updateRate>
+                        </Row>
+                    </Rows>
+                </ConfigurationTable>
+            </ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="true"
+                     aspect.isLogged="false"
+                     aspect.isPersistent="false"
+                     aspect.isReadOnly="false"
+                     baseType="BOOLEAN"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="isACrunning"
+                     ordinal="1"></PropertyDefinition>
+                </PropertyDefinitions>
+                <ServiceDefinitions></ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations></ServiceImplementations>
+                <Subscriptions>
+                    <Subscription
+                     enabled="true"
+                     eventName="Timer"
+                     source=""
+                     sourceProperty=""
+                     sourceType="Thing">
+                        <ServiceImplementation
+                         description=""
+                         handlerName="Script"
+                         name="Event.Timer">
+                            <ConfigurationTables>
+                                <ConfigurationTable
+                                 description=""
+                                 isMultiRow="false"
+                                 name="Script"
+                                 ordinal="0">
+                                    <DataShape>
+                                        <FieldDefinitions>
+                                            <FieldDefinition
+                                             baseType="STRING"
+                                             description="code"
+                                             name="code"
+                                             ordinal="0"></FieldDefinition>
+                                        </FieldDefinitions>
+                                    </DataShape>
+                                    <Rows>
+                                        <Row>
+                                            <code>
+                                            <![CDATA[
+                                            // Populate properties for the house the first time the service runs only.
+                                            if (!Things["StorageBuilding"].buildingID) {
+                                            	Things["StorageBuilding"].buildingID = "12345";
+                                            	Things["StorageBuilding"].building_lat_long = "42.296375,-71.214556,0";
+                                            	Things["StorageBuilding"].temperature = 70;
+                                            }
+                                            
+                                            // Thermostat logic
+                                            //	If temperature is above 72, turn AC on, 
+                                            //	If temperature is below 70, turn AC off
+                                            var temp = Things["StorageBuilding"].temperature;
+                                            if(temp > 72){
+                                                me.isACrunning = true;
+                                                Things["StorageBuilding"].watts = 100;
+                                            }
+                                            
+                                            if(temp < 70.1){
+                                                me.isACrunning = false;
+                                                Things["StorageBuilding"].watts = 0;
+                                            }
+                                            
+                                            // Simulate temperature change based on AC status
+                                            //	decrease temperature if AC is on,
+                                            //	otherwise increase temperature a small amount 
+                                            if (me.isACrunning){
+                                            	Things["StorageBuilding"].temperature = temp - 0.5;
+                                            } else {
+                                                Things["StorageBuilding"].temperature = temp + 0.2;
+                                            }
+                                            ]]>
+                                            </code>
+                                        </Row>
+                                    </Rows>
+                                </ConfigurationTable>
+                            </ConfigurationTables>
+                        </ServiceImplementation>
+                    </Subscription>
+                </Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations>
+                <AlertDefinitions
+                 name="isACrunning"></AlertDefinitions>
+            </AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties></ThingProperties>
+        </Thing>
+    </Things>
+</Entities>
