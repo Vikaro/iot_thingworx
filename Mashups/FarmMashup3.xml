@@ -15,7 +15,7 @@
          description=""
          documentationContent=""
          homeMashup=""
-         lastModifiedDate="2019-01-20T21:05:11.144+01:00"
+         lastModifiedDate="2019-01-27T20:32:09.212+01:00"
          name="FarmMashup3"
          projectName="FarmProject"
          rows="0.0"
@@ -37,6 +37,7 @@
             <ParameterDefinitions></ParameterDefinitions>
             <Things>
                 <Thing>Barn</Thing>
+                <Thing>Barn3</Thing>
                 <Thing>Barn2</Thing>
                 <Thing>StorageBuilding</Thing>
             </Things>
@@ -106,6 +107,29 @@
                     "Parameters" : { },
                     "RefreshInterval" : 0,
                     "Target" : "QueryPropertyHistory"
+                  } ]
+                },
+                "Things_Barn3" : {
+                  "DataName" : "Things_Barn3",
+                  "EntityName" : "Barn3",
+                  "EntityType" : "Things",
+                  "Id" : "2ea81cd2-753e-413a-80fc-7636fe8aa1da",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "7e3a0d53-1493-4d46-8bae-2e2f6beaf949",
+                    "Name" : "QueryPropertyHistory",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "QueryPropertyHistory"
+                  }, {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "bffb948f-99a7-4cd6-8c30-645b6e6f9553",
+                    "Name" : "GetPropertyValues",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetPropertyValues"
                   } ]
                 },
                 "Things_StorageBuilding" : {
@@ -232,6 +256,40 @@
                 "TargetArea" : "UI",
                 "TargetId" : "OpenStreetMap-9",
                 "TargetSection" : ""
+              }, {
+                "Id" : "cb44bfa1-e062-4916-b1a2-1b8d1d8c2f32",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "watts",
+                  "SourcePropertyBaseType" : "NUMBER",
+                  "SourcePropertyType" : "Field",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "NUMBER",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "GetPropertyValues",
+                "SourceSection" : "Things_Barn3",
+                "TargetArea" : "UI",
+                "TargetId" : "gauge-10",
+                "TargetSection" : ""
+              }, {
+                "Id" : "304730ca-0fd0-4b1a-9cf4-40046e5a2e00",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "temperature",
+                  "SourcePropertyBaseType" : "NUMBER",
+                  "SourcePropertyType" : "Field",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "NUMBER",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "GetPropertyValues",
+                "SourceSection" : "Things_Barn3",
+                "TargetArea" : "UI",
+                "TargetId" : "gauge-11",
+                "TargetSection" : ""
               } ],
               "DesignTimePermissions" : {
                 "Create" : [ ],
@@ -294,6 +352,24 @@
                 "EventTriggerId" : "mashup-root",
                 "EventTriggerSection" : "",
                 "Id" : "7d3aede0-f293-4dd3-95a6-aeb946000285"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_Barn3",
+                "EventHandlerService" : "QueryPropertyHistory",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "7715b3ac-66db-43cf-a37b-86a1baa70250"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_Barn3",
+                "EventHandlerService" : "GetPropertyValues",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "3a465eaf-7721-4bed-9fda-9ef0a5cf46a1"
               } ],
               "RunTimePermissions" : {
                 "permissions" : [ ]
@@ -308,7 +384,7 @@
                   "ConfigureGadgetButtonStyle" : "DefaultConfigureGadgetButtonStyle",
                   "DisplayName" : "Mashup",
                   "EnableParameterEditing" : false,
-                  "Height" : 753,
+                  "Height" : 1123,
                   "Id" : "mashup-root",
                   "IgnoreWarningsInViewMashup" : false,
                   "IsPrintLayout" : false,
@@ -330,7 +406,7 @@
                   "Width" : 1024,
                   "Z-index" : 10,
                   "__TypeDisplayName" : "Mashup",
-                  "id_index" : 9,
+                  "id_index" : 11,
                   "supportsAutoResize" : true
                 },
                 "Widgets" : [ {
@@ -513,6 +589,7 @@
                     "ValueDecimals" : 0,
                     "ValueDigits" : 3,
                     "ValueDisplayMode" : "none",
+                    "ValueFormatter_StateParameters" : [ ],
                     "ValueStyle" : "DefaultGaugeValueStyle",
                     "Visible" : true,
                     "Width" : 200,
@@ -635,6 +712,22 @@
                     "SecondaryYAxisMinimum" : 0,
                     "SecondaryYAxisZeroscale" : false,
                     "SelectedItemStyle" : "DefaultChartSelectionStyle",
+                    "SeriesDataStyle10_StateParameters" : [ ],
+                    "SeriesDataStyle11_StateParameters" : [ ],
+                    "SeriesDataStyle12_StateParameters" : [ ],
+                    "SeriesDataStyle13_StateParameters" : [ ],
+                    "SeriesDataStyle14_StateParameters" : [ ],
+                    "SeriesDataStyle15_StateParameters" : [ ],
+                    "SeriesDataStyle16_StateParameters" : [ ],
+                    "SeriesDataStyle1_StateParameters" : [ ],
+                    "SeriesDataStyle2_StateParameters" : [ ],
+                    "SeriesDataStyle3_StateParameters" : [ ],
+                    "SeriesDataStyle4_StateParameters" : [ ],
+                    "SeriesDataStyle5_StateParameters" : [ ],
+                    "SeriesDataStyle6_StateParameters" : [ ],
+                    "SeriesDataStyle7_StateParameters" : [ ],
+                    "SeriesDataStyle8_StateParameters" : [ ],
+                    "SeriesDataStyle9_StateParameters" : [ ],
                     "SeriesMarkerType1" : "chart",
                     "SeriesMarkerType10" : "chart",
                     "SeriesMarkerType11" : "chart",
@@ -755,14 +848,17 @@
                     "Left" : 30,
                     "LocationField" : "building_lat_long",
                     "MarkerField" : "",
+                    "MarkerFormatting_StateParameters" : [ ],
                     "MarkerHeight" : 32,
                     "MarkerStyle" : "DefaultMapMarkerStyle",
                     "MarkerWidth" : 32,
+                    "MashupParameters" : [ ],
                     "MultiSelect" : false,
                     "PathStyle" : "DefaultMapPathStyle",
                     "PlannedRouteLocationField" : "location",
                     "PlannedRouteStyle" : "DefaultMapRouteStyle",
                     "RegionFillOpacity" : 1,
+                    "RegionFormatting_StateParameters" : [ ],
                     "RegionLocationField" : "location",
                     "RegionLocationsField" : "locations",
                     "RegionMultiSelect" : false,
@@ -795,6 +891,108 @@
                     "Z-index" : 10,
                     "Zoom" : 8,
                     "__TypeDisplayName" : "OpenStreetMap"
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "Aperture" : 270,
+                    "Area" : "UI",
+                    "CenterDiameter" : 20,
+                    "CenterStyle" : "DefaultGaugeCenterStyle",
+                    "DisplayName" : "gauge-10",
+                    "FormatNeedle" : true,
+                    "GaugeBorder" : 20,
+                    "GaugeBorderStyle" : "DefaultGaugeBorderStyle",
+                    "GaugeFaceStyle" : "DefaultGaugeFaceStyle",
+                    "GaugeStyle" : "DefaultGaugeStyle",
+                    "Height" : 200,
+                    "Id" : "gauge-10",
+                    "Intervals" : 10,
+                    "IntervalsPerLabel" : 2,
+                    "LabelDecimals" : 0,
+                    "LabelDigits" : 3,
+                    "LabelDisplayMode" : "inside",
+                    "LabelStyle" : "DefaultGaugeLabelStyle",
+                    "Left" : 20,
+                    "Legend" : "Watts Agent",
+                    "LegendDisplayMode" : "bottom",
+                    "LegendStyle" : "DefaultGaugeLegendStyle",
+                    "MaxValue" : 200,
+                    "MinValue" : 0,
+                    "MinorTickLength" : 4,
+                    "MinorTicks" : 4,
+                    "NeedleDiameter" : 10,
+                    "NeedleStyle" : "DefaultGaugeNeedleStyle",
+                    "ReferenceAngle" : 225,
+                    "ResponsiveLayout" : false,
+                    "RingWidth" : 10,
+                    "ShowDataLoading" : true,
+                    "TickLength" : 8,
+                    "TickStyle" : "DefaultGaugeTickStyle",
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 770,
+                    "Type" : "gauge",
+                    "ValueDecimals" : 0,
+                    "ValueDigits" : 3,
+                    "ValueDisplayMode" : "none",
+                    "ValueStyle" : "DefaultGaugeValueStyle",
+                    "Visible" : true,
+                    "Width" : 200,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Gauge",
+                    "__supportsTooltip" : true
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "Aperture" : 270,
+                    "Area" : "UI",
+                    "CenterDiameter" : 20,
+                    "CenterStyle" : "DefaultGaugeCenterStyle",
+                    "DisplayName" : "gauge-11",
+                    "FormatNeedle" : true,
+                    "GaugeBorder" : 20,
+                    "GaugeBorderStyle" : "DefaultGaugeBorderStyle",
+                    "GaugeFaceStyle" : "DefaultGaugeFaceStyle",
+                    "GaugeStyle" : "DefaultGaugeStyle",
+                    "Height" : 200,
+                    "Id" : "gauge-11",
+                    "Intervals" : 10,
+                    "IntervalsPerLabel" : 2,
+                    "LabelDecimals" : 0,
+                    "LabelDigits" : 3,
+                    "LabelDisplayMode" : "inside",
+                    "LabelStyle" : "DefaultGaugeLabelStyle",
+                    "Left" : 250,
+                    "Legend" : "",
+                    "LegendDisplayMode" : "bottom",
+                    "LegendStyle" : "DefaultGaugeLegendStyle",
+                    "MaxValue" : 200,
+                    "MinValue" : 0,
+                    "MinorTickLength" : 4,
+                    "MinorTicks" : 4,
+                    "NeedleDiameter" : 10,
+                    "NeedleStyle" : "DefaultGaugeNeedleStyle",
+                    "ReferenceAngle" : 225,
+                    "ResponsiveLayout" : false,
+                    "RingWidth" : 10,
+                    "ShowDataLoading" : true,
+                    "TickLength" : 8,
+                    "TickStyle" : "DefaultGaugeTickStyle",
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 770,
+                    "Type" : "gauge",
+                    "ValueDecimals" : 0,
+                    "ValueDigits" : 3,
+                    "ValueDisplayMode" : "none",
+                    "ValueStyle" : "DefaultGaugeValueStyle",
+                    "Visible" : true,
+                    "Width" : 200,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Gauge",
+                    "__supportsTooltip" : true
                   },
                   "Widgets" : [ ]
                 } ]

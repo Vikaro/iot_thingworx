@@ -124,13 +124,13 @@
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
                 <watts>
-                    <Value>0.0</Value>
-                    <Timestamp>2019-01-24T15:13:25.916+01:00</Timestamp>
+                    <Value>100.0</Value>
+                    <Timestamp>2019-01-27T20:37:38.407+01:00</Timestamp>
                     <Quality>GOOD</Quality>
                 </watts>
                 <temperature>
-                    <Value>70.40000000020542</Value>
-                    <Timestamp>2019-01-24T15:13:28.923+01:00</Timestamp>
+                    <Value>70.50000000037758</Value>
+                    <Timestamp>2019-01-27T20:37:44.408+01:00</Timestamp>
                     <Quality>GOOD</Quality>
                 </temperature>
                 <building_lat_long>
